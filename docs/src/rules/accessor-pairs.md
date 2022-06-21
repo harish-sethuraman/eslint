@@ -58,6 +58,8 @@ This rule always checks object literals and property descriptors. By default, it
 
 Examples of **incorrect** code for the default `{ "setWithoutGet": true }` option:
 
+:::incorrect
+
 ```js
 /*eslint accessor-pairs: "error"*/
 
@@ -75,7 +77,11 @@ Object.defineProperty(o, 'c', {
 });
 ```
 
+:::
+
 Examples of **correct** code for the default `{ "setWithoutGet": true }` option:
+
+:::correct
 
 ```js
 /*eslint accessor-pairs: "error"*/
@@ -100,11 +106,15 @@ Object.defineProperty(o, 'c', {
 });
 
 ```
+
+:::
 
 ### getWithoutSet
 
 Examples of **incorrect** code for the `{ "getWithoutSet": true }` option:
 
+:::incorrect
+
 ```js
 /*eslint accessor-pairs: ["error", { "getWithoutSet": true }]*/
 
@@ -134,9 +144,13 @@ Object.defineProperty(o, 'c', {
     }
 });
 ```
+
+:::
 
 Examples of **correct** code for the `{ "getWithoutSet": true }` option:
 
+:::correct
+
 ```js
 /*eslint accessor-pairs: ["error", { "getWithoutSet": true }]*/
 var o = {
@@ -159,6 +173,8 @@ Object.defineProperty(o, 'c', {
 });
 
 ```
+
+:::
 
 ### enforceForClassMembers
 
@@ -168,6 +184,8 @@ When `enforceForClassMembers` is set to `true` (default):
 * `"setWithoutGet": true` will also warn for setters without getters in classes.
 
 Examples of **incorrect** code for `{ "getWithoutSet": true, "enforceForClassMembers": true }`:
+
+:::incorrect
 
 ```js
 /*eslint accessor-pairs: ["error", { "getWithoutSet": true, "enforceForClassMembers": true }]*/
@@ -194,7 +212,11 @@ const Baz = class {
 }
 ```
 
+:::
+
 Examples of **incorrect** code for `{ "setWithoutGet": true, "enforceForClassMembers": true }`:
+
+:::incorrect
 
 ```js
 /*eslint accessor-pairs: ["error", { "setWithoutGet": true, "enforceForClassMembers": true }]*/
@@ -212,9 +234,13 @@ const Bar = class {
 }
 ```
 
+:::
+
 When `enforceForClassMembers` is set to `false`, this rule ignores classes.
 
 Examples of **correct** code for `{ "getWithoutSet": true, "setWithoutGet": true, "enforceForClassMembers": false }`:
+
+:::correct
 
 ```js
 /*eslint accessor-pairs: ["error", {
@@ -245,6 +271,8 @@ const Quux = class {
     }
 }
 ```
+
+:::
 
 ## Known Limitations
 
